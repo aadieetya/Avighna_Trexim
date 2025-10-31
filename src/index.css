@@ -1,0 +1,118 @@
+/* Tailwind v4 */
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* Theme tokens */
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  --font-philosopher: "Philosopher", sans-serif;
+
+  /* Updated color scheme */
+  --color-brand-50:  #e6f3ff;
+  --color-brand-100: #cce7ff;
+  --color-brand-200: #99cfff;
+  --color-brand-300: #66b7ff;
+  --color-brand-400: #339fff;
+  --color-brand-500: #1a75b6;
+  --color-brand-600: #0f5795;
+  --color-brand-700: #0b4170;
+  --color-brand-800: #082c4b;
+  --color-brand-900: #041626;
+
+  --color-primary: #0f5795;
+  --color-primary-light: #1a75b6;
+  --color-secondary: #e6e7e8;
+  --color-white: #ffffff;
+
+  --color-night: #0a1443;
+  --color-mist:  #f5fbff;
+
+  --shadow-soft: 0 10px 30px rgba(10, 20, 67, .08);
+  --bg-hero-clouds:
+    radial-gradient(1200px 600px at 80% -20%, rgba(15,87,149,.20), transparent 60%),
+    radial-gradient(800px 400px at 10% 10%, rgba(26,117,182,.18), transparent 60%);
+}
+
+/* Base */
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden; /* Fix horizontal scroll */
+}
+
+body {
+  font-family: var(--font-philosopher);
+  color: #1e293b;
+  background: #ffffff;
+}
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600; /* Semi-bold */
+}
+
+p, span, div {
+  font-family: var(--font-philosopher);
+  font-weight: 400; /* Regular */
+}
+
+/* Helpers */
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply max-w-7xl mx-auto py-16 sm:py-20 px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition;
+  font-family: var(--font-sans);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary {
+  @apply text-white;
+  background-color: var(--color-brand-600);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-700);
+}
+
+.btn-ghost {
+  background-color: var(--color-white);
+  color: var(--color-brand-600);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-secondary);
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium;
+  font-family: var(--font-sans);
+  border-color: var(--color-secondary);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.card {
+  @apply rounded-2xl p-6;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Utility classes for fonts */
+.font-heading {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.font-body {
+  font-family: var(--font-philosopher);
+  font-weight: 400;
+}

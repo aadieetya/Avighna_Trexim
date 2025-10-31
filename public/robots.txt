@@ -1,0 +1,35 @@
+# robots.txt for avighnatrexim.com
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Disallow crawling of common unnecessary files/folders
+# (Add these if applicable to your project)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+
+# Disallow crawling of build artifacts and config files
+Disallow: /vite.config.*
+Disallow: /package*.json
+Disallow: /.env*
+
+# Allow crawling of CSS, JS, and images (important for SEO)
+Allow: *.css
+Allow: *.js
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+
+# Sitemap location
+Sitemap: https://avighnatrexim.com/sitemap.xml
+
+# Crawl-delay (optional - only add if you experience server load issues)
+# Crawl-delay: 1
