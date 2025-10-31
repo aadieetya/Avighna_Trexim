@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
+import { useState, useEffect, useRef  } from "react";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView   } from "framer-motion";
 import farmImage from "../assets/old-farm.png"
 import warehouse from "../assets/warehouse.png"
 import coldstorage from "../assets/cold-storage.png"
@@ -24,6 +24,35 @@ import {
 } from "lucide-react";
 
 export default function About() {
+
+  // Counter component
+const Counter = ({ value, duration = 1 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    // Handle percentage
+    if (value.includes("%")) {
+      return Math.round(latest) + "%";
+    }
+    // Handle numbers with +
+    if (value.includes("+")) {
+      return Math.round(latest) + "+";
+    }
+    return Math.round(latest);
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      const numericValue = parseInt(value.replace(/\D/g, ""));
+      const controls = animate(count, numericValue, { duration });
+      return controls.stop;
+    }
+  }, [isInView, count, value, duration]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
+
   const [hoveredCountry, setHoveredCountry] = useState(null);
   
     // Setup Mercator Projection for map
@@ -469,6 +498,42 @@ export default function About() {
             </motion.div>
           ))}
         </motion.div>
+        {/* Statistics Section ends */}
+
+{/* Statistics Section this section has animation logic, shall be used if required */}
+{/* <motion.div
+  className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  {[
+    { value: "30+", label: "Years of Heritage", color: "from-green-400 to-green-600" },
+    { value: "500+", label: "Happy Traders", color: "from-blue-400 to-blue-600" },
+    { value: "20+", label: "Export Countries", color: "from-purple-400 to-purple-600" },
+    { value: "100%", label: "Quality Assured", color: "from-orange-400 to-orange-600" }
+  ].map((stat, index) => (
+    <motion.div
+      key={index}
+      className="relative group"
+      whileHover={{ scale: 1.05 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`}></div>
+      <div className="relative bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-lg">
+        <h4 className="text-3xl font-poppins font-bold text-brand-600 mb-1">
+          <Counter value={stat.value} duration={2.5} />
+        </h4>
+        <p className="text-sm font-philosopher text-gray-600">{stat.label}</p>
+      </div>
+    </motion.div>
+  ))}
+</motion.div> */}
+{/* Statistics Section ends */}
 
         {/* Customer Reviews Section */}
         {/* <motion.div
@@ -526,63 +591,6 @@ export default function About() {
           </div>
         </motion.div> */}
 
-        {/* Countries Section with Enhanced Design */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-poppins font-bold text-brand-600 mb-2">
-              Our Global Reach
-            </h3>
-            <p className="font-philosopher text-gray-600">
-              Delivering quality products to satisfied customers worldwide
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            {countries.map((country, index) => (
-              <motion.div
-                key={country.name}
-                className="relative"
-                onMouseEnter={() => setHovered(country)}
-                onMouseLeave={() => setHovered(null)}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.02 }}
-                viewport={{ once: true }}
-              >
-                <motion.div
-                  className="cursor-pointer rounded-full border-2 border-brand-600 bg-white px-5 py-2.5 text-sm font-poppins font-medium text-brand-600 shadow-md hover:bg-brand-600 hover:text-white transition-all"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {country.name}
-                </motion.div>
-
-                <AnimatePresence>
-                  {hovered?.name === country.name && (
-                    <motion.div
-                      className="absolute left-1/2 top-full z-20 mt-2 w-64 -translate-x-1/2 rounded-lg bg-brand-600 p-4 text-white shadow-xl"
-                      initial={{ opacity: 0, y: 5, scale: 0.9 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 5, scale: 0.9 }}
-                    >
-                      <p className="font-poppins font-semibold text-lg mb-2">
-                        {country.name}
-                      </p>
-                      <p className="font-philosopher text-sm">🌊 Port: {country.port}</p>
-                      <p className="font-philosopher text-sm">✈️ Airport: {country.airport}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
-        
          <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
