@@ -17,6 +17,17 @@ import member3 from "../assets/member3.png";
 
 const team = [
   { 
+    name: "Aaditya Jadhav", 
+    role: "Co-Founder", 
+    title: "Director, Supply Chain Excellence",
+    img: member3,
+    icon: Globe,
+    expertise: ["Supply Chain Management", "Packaging Standards", "Global Distribution"],
+    bio: "Aaditya oversees end-to-end operations, ensuring timely delivery and maintaining quality from farm to international markets.",
+    linkedin: "#",
+    email: "aaditya@avighnatrexim.com"
+  },
+  { 
     name: "Nikhil Kadam", 
     role: "Co-Founder", 
     title: "Director, Procurement Operations",
@@ -37,17 +48,6 @@ const team = [
     bio: "Yash's expertise in international trade regulations ensures smooth and compliant operations across all our export destinations.",
     linkedin: "#",
     email: "yash@avighnatrexim.com"
-  },
-  { 
-    name: "Aaditya Jadhav", 
-    role: "Co-Founder", 
-    title: "VP, Supply Chain Excellence",
-    img: member3,
-    icon: Globe,
-    expertise: ["Supply Chain Management", "Packaging Standards", "Global Distribution"],
-    bio: "Aaditya oversees end-to-end operations, ensuring timely delivery and maintaining quality from farm to international markets.",
-    linkedin: "#",
-    email: "aaditya@avighnatrexim.com"
   },
 ];
 

@@ -203,7 +203,7 @@ export default function Work() {
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
-              className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden"
+              className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -211,27 +211,30 @@ export default function Work() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className={`relative bg-gradient-to-br ${selectedCert.color} p-6 text-white`}>
+              <div className={`relative bg-gradient-to-br ${selectedCert.color} p-4 sm:p-6 text-white flex-shrink-0`}>
+                {/* Close button - More prominent on mobile */}
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                  className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 sm:p-2 rounded-full bg-white/30 hover:bg-white/40 transition-colors z-10 shadow-lg"
+                  aria-label="Close modal"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-6 h-6 sm:w-6 sm:h-6" />
                 </button>
-                <div className="flex items-center gap-4">
-                  <div className="p-4 rounded-xl bg-white/20">
-                    <selectedCert.icon size={32} />
+                
+                <div className="flex items-center gap-3 sm:gap-4 pr-12">
+                  <div className="p-3 sm:p-4 rounded-xl bg-white/20">
+                    <selectedCert.icon size={28} className="sm:w-8 sm:h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-poppins font-bold">{selectedCert.name}</h3>
-                    <p className="font-philosopher opacity-90">{selectedCert.fullName}</p>
+                    <h3 className="text-lg sm:text-2xl font-poppins font-bold">{selectedCert.name}</h3>
+                    <p className="font-philosopher opacity-90 text-sm sm:text-base">{selectedCert.fullName}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Modal Content */}
-              <div className="p-6 md:p-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              {/* Modal Content - Scrollable */}
+              <div className="p-4 sm:p-6 md:p-8 overflow-y-auto flex-1">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                   {/* Certificate Image */}
                   <div className="relative group">
                     <div className="relative rounded-lg overflow-hidden bg-gray-100 shadow-lg">
@@ -245,7 +248,7 @@ export default function Work() {
                       />
                       {/* Watermark overlay */}
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="text-brand-600/10 font-poppins font-bold text-6xl rotate-[-45deg]">
+                        <div className="text-brand-600/10 font-poppins font-bold text-4xl sm:text-6xl rotate-[-45deg]">
                           AVIGHNA TREXIM
                         </div>
                       </div>
@@ -259,32 +262,43 @@ export default function Work() {
 
                   {/* Certificate Details */}
                   <div>
-                    <h4 className="text-xl font-poppins font-semibold text-gray-800 mb-4">
+                    <h4 className="text-lg sm:text-xl font-poppins font-semibold text-gray-800 mb-3 sm:mb-4">
                       About This Certification
                     </h4>
-                    <p className="font-philosopher text-gray-600 mb-6">
+                    <p className="font-philosopher text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
                       {selectedCert.description}
                     </p>
 
-                    <h5 className="text-lg font-poppins font-semibold text-gray-800 mb-3">
+                    <h5 className="text-base sm:text-lg font-poppins font-semibold text-gray-800 mb-3">
                       Key Benefits
                     </h5>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-2 mb-4 sm:mb-6">
                       {selectedCert.benefits.map((benefit, idx) => (
                         <div key={idx} className="flex items-center gap-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                          <span className="font-philosopher text-gray-700">{benefit}</span>
+                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                          <span className="font-philosopher text-gray-700 text-sm sm:text-base">{benefit}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="p-4 bg-brand-50 rounded-lg border border-brand-200">
-                      <p className="text-sm font-philosopher text-brand-800">
+                    <div className="p-3 sm:p-4 bg-brand-50 rounded-lg border border-brand-200">
+                      <p className="text-xs sm:text-sm font-philosopher text-brand-800">
                         <strong className="font-poppins">Note:</strong> This certificate is regularly updated and maintained in compliance with all regulatory requirements.
                       </p>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Close Button at Bottom */}
+              <div className="md:hidden p-4 bg-gray-50 border-t border-gray-200 flex-shrink-0">
+                <button
+                  onClick={() => setSelectedCert(null)}
+                  className="w-full py-3 px-4 bg-brand-600 hover:bg-brand-700 text-white font-poppins font-semibold rounded-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  <X className="w-5 h-5" />
+                  Close Certificate
+                </button>
               </div>
             </motion.div>
           </motion.div>
