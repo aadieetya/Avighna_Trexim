@@ -44,3 +44,24 @@ export default {
   },
   plugins: [],
 }
+
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        slideDown: 'slideDown 0.3s ease-out',
+        fadeIn: 'fadeIn 0.3s ease-out forwards',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translateX(-50%) translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateX(-50%) translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateX(-8px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+    },
+  },
+}
