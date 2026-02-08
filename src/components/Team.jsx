@@ -34,7 +34,7 @@ const team = [
     img: member1,
     icon: Package,
     expertise: ["Product Procurement", "Quality Assurance", "Vendor Relations"],
-    bio: "With over 15 years in agricultural sourcing, Nikhil ensures we procure only the finest quality products directly from trusted farmers.",
+    bio: "With excellent experience in agricultural sourcing, Nikhil ensures we procure only the finest quality products directly from trusted farmers.",
     linkedin: "#",
     email: "nikhil@avighnatrexim.com"
   },
@@ -133,9 +133,9 @@ export default function Team() {
                     {/* <p className="text-sm font-poppins font-medium text-brand-600 mb-2">
                       {member.role}
                     </p> */}
-                    <p className="text-base font-philosopher text-gray-700 mb-4">
+                    {/* <p className="text-base font-philosopher text-gray-700 mb-4">
                       {member.title}
-                    </p>
+                    </p> */}
 
                     {/* Bio */}
                     <p className="text-sm font-philosopher text-gray-600 mb-6 leading-relaxed">
