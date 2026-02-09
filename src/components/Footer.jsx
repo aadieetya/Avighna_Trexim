@@ -8,7 +8,7 @@ export default function Footer() {
       🌐 From Local Roots to Global Reach
     </p>
     <p className="text-xs text-white">
-      ©Avighna Impex. All rights reserved.
+      ©Avighna Trexim. All rights reserved.
     </p>
   </div>
 </footer>

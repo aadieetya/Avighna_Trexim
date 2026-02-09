@@ -79,9 +79,9 @@ export default function Hero() {
           <p className="mt-6 text-xl sm:text-2xl md:text-3xl font-poppins font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
             Delivering Trust Across Oceans!!
           </p>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl font-philosopher text-gray-100 leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+          {/* <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl font-philosopher text-gray-100 leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
             Driving business growth across borders with integrity and trusted solutions.
-          </p>
+          </p> */}
           <div className="mt-8">
             <motion.a
               href="#about"
@@ -96,7 +96,7 @@ export default function Hero() {
       </div>
 
       {/* Floating Down Arrow */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
         animate={{
           y: [0, 10, 0],
@@ -119,7 +119,7 @@ export default function Hero() {
         >
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

@@ -29,7 +29,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Discover our premium range of agricultural products, sourced directly from the finest farms
+          Discover our premium range of agricultural products, sourced directly from the finest farms and processing units.
         </motion.p>
 
         {/* Cards */}
