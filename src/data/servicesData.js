@@ -10,7 +10,7 @@ import pulses from "../assets/pulses.jpg";
 import soybeans from "../assets/soyabean.jpeg";
 import onionpowder from "../assets/onion-powder.jpg";
 import onionflakes from "../assets/onion-flakes.jpg";
-
+import rice from "../assets/rice.jpg";
 
 
 export const services = [
@@ -109,20 +109,45 @@ export const services = [
     img: pulses,
   },
   {
-    title: "Cotton Seed Oil Cake",
-    desc: "Cotton Seed Oil Cake is a protein-rich byproduct of cottonseed oil extraction, widely used as nutritious cattle feed.",
-    details: {
-      specs: [
-        { label: "Material", value: "Cotton Seeds" },
-        { label: "Usage/Application", value: "Cattle Feed" },
-        { label: "Shelf Life", value: "8 Months" },
-        { label: "Storage Instruction", value: "Store Cool and Dry Place" },
-      ],
-      description:
-        "Cotton Seed Oil Cake provides animals with plant-based protein, fiber, and essential nutrients that support growth and milk production. It contains digestible carbohydrates, minerals like calcium, phosphorus, and iron, and beneficial fatty acids for energy. With its high protein content, it is often mixed with other feed to improve livestock health and productivity. Affordable and widely available, it is a sustainable byproduct that adds value to cotton farming while supporting animal nutrition.",
-    },
-    img: cattle,
+  title: "Rice",
+  desc: "Premium quality rice from India, including aromatic Basmati and nutritious Non-Basmati varieties, providing essential carbohydrates, vitamins, and minerals for global cuisines.",
+  details: {
+    specs: [
+      { label: "Packaging", value: "PP Bags, BOPP Bags, Jute Bags, Non-Woven Fabric Bags (25kg, 50kg) or as per client requirement." },
+      { label: "Moisture Content", value: "Maximum 12% to 15% (typically ≤14%)" },
+      { label: "Broken Percentage", value: "Available in 5%, 10%, 25%, and 100% broken varieties" },
+      { label: "Quality Standards", value: "Sortex Clean | Well Milled | APEDA Certified | ISO 22000 | HACCP Compliant" },
+      { 
+        label: "Basmati Rice Varieties", 
+        value: "Pusa Basmati 1121 (Extra Long Grain) | Pusa Basmati 1509 | Traditional Basmati 370 | Basmati 217 | Sugandha Basmati | Sharbati Basmati | Punjab Basmati | Haryana Basmati | Taraori Basmati" 
+      },
+      { 
+        label: "Non-Basmati Rice Varieties", 
+        value: "IR 64 Parboiled Rice | IR 64 Raw/White Rice | IR 8 Rice | Sona Masoori Rice | Swarna Rice | Indrayani Rice (Maharashtra) | Parboiled Rice (Sella) | Broken Rice | Matta Rice | Jasmine Rice" 
+      },
+      { label: "Grain Length", value: "Basmati: 6.6mm - 8.5mm | Non-Basmati: 5.2mm - 6.2mm" },
+      { label: "Shelf Life", value: "12-24 months when stored properly" },
+    ],
+    description:
+      "India is the world's largest rice exporter, renowned for its premium Basmati rice with distinctive aroma, extra-long grains, and exceptional cooking qualities. Basmati rice, grown in the Himalayan foothills, is prized globally for its nutty flavor, fluffy texture, and ability to elongate 2-4 times upon cooking, making it ideal for biryanis, pilafs, and gourmet dishes. Non-Basmati varieties like IR 64, Sona Masoori, Swarna, and the aromatic Indrayani rice (from Maharashtra) offer excellent nutritional value, versatility for everyday cooking, and regional specialties. Indrayani rice is particularly valued for its medium grain, nutty flavor, non-sticky texture, and high fiber content, making it perfect for idli, dosa, and traditional South Indian cuisine. Rich in carbohydrates, B-vitamins, and essential minerals, Indian rice undergoes rigorous quality control, modern milling processes, and is available in raw, parboiled, and steamed forms. Exported to over 150 countries including Saudi Arabia, UAE, Iran, USA, UK, and African nations, Indian rice meets international food safety standards (APEDA, FSSAI, Phytosanitary certification) and is packaged in moisture-resistant, pest-proof bags to ensure freshness and quality throughout global supply chains.",
   },
+  img: rice, // Your image variable
+}
+  // {
+  //   title: "Cotton Seed Oil Cake",
+  //   desc: "Cotton Seed Oil Cake is a protein-rich byproduct of cottonseed oil extraction, widely used as nutritious cattle feed.",
+  //   details: {
+  //     specs: [
+  //       { label: "Material", value: "Cotton Seeds" },
+  //       { label: "Usage/Application", value: "Cattle Feed" },
+  //       { label: "Shelf Life", value: "8 Months" },
+  //       { label: "Storage Instruction", value: "Store Cool and Dry Place" },
+  //     ],
+  //     description:
+  //       "Cotton Seed Oil Cake provides animals with plant-based protein, fiber, and essential nutrients that support growth and milk production. It contains digestible carbohydrates, minerals like calcium, phosphorus, and iron, and beneficial fatty acids for energy. With its high protein content, it is often mixed with other feed to improve livestock health and productivity. Affordable and widely available, it is a sustainable byproduct that adds value to cotton farming while supporting animal nutrition.",
+  //   },
+  //   img: cattle,
+  // },
   // {
   //   title: "Nashik Red Onions",
   //   desc: "Nashik Red Onions are flavor-rich bulbs known for their pungency, vibrant color, and nutritional benefits.",

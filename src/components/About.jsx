@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef  } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView   } from "framer-motion";
-import farmImage from "../assets/old-farm.png"
+import farmImage from "../assets/Farm-image.jpg"
 import warehouse from "../assets/warehouse.png"
 import coldstorage from "../assets/cold-storage.png"
 import loadingcontainer from "../assets/loading-container.png"
