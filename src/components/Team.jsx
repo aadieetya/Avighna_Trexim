@@ -87,13 +87,15 @@ export default function Team() {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid gap-8 md:grid-cols-3 mb-16">
+        <div
+          className={`mb-16 w-full flex flex-wrap justify-center gap-8 ${team.length === 1 ? 'sm:justify-center' : team.length === 2 ? 'sm:justify-center md:justify-center' : 'md:justify-between'}`}
+        >
           {team.map((member, i) => {
             const Icon = member.icon;
             return (
               <motion.div
                 key={member.name}
-                className="group relative"
+                className="group relative max-w-xs flex-1 min-w-[280px]"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
@@ -101,10 +103,9 @@ export default function Team() {
                 onMouseEnter={() => setHoveredMember(member.name)}
                 onMouseLeave={() => setHoveredMember(null)}
               >
-                <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl min-h-[500px] flex flex-col justify-between">
                   {/* Top Accent Bar */}
                   <div className="h-2 bg-gradient-to-r from-brand-600 to-brand-500"></div>
-                  
                   {/* Profile Section */}
                   <div className="p-6 text-center">
                     {/* Profile Image */}
