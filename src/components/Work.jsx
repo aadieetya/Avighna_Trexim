@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Shield, 
-  Award, 
-  FileCheck, 
-  Building2, 
-  Leaf, 
+import {
+  Shield,
+  Award,
+  FileCheck,
+  Building2,
+  Leaf,
   Globe,
   X,
   CheckCircle,
@@ -134,7 +134,7 @@ export default function Work() {
                 <div className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4">
@@ -143,14 +143,14 @@ export default function Work() {
                       </div>
                       <Lock className="w-4 h-4 text-gray-400" />
                     </div>
-                    
+
                     <h3 className="text-xl font-poppins font-semibold text-gray-800 mb-2">
                       {cert.name}
                     </h3>
                     <p className="text-sm font-philosopher text-gray-600 mb-4">
                       {cert.description}
                     </p>
-                    
+
                     {/* Benefits */}
                     <div className="space-y-1">
                       {cert.benefits.slice(0, 2).map((benefit, idx) => (
@@ -160,7 +160,7 @@ export default function Work() {
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* View Certificate Link */}
                     <div className="mt-4 flex items-center gap-2 text-brand-600 group-hover:gap-3 transition-all">
                       <span className="text-sm font-poppins font-medium">View Certificate</span>
@@ -220,7 +220,7 @@ export default function Work() {
                 >
                   <X className="w-6 h-6 sm:w-6 sm:h-6" />
                 </button>
-                
+
                 <div className="flex items-center gap-3 sm:gap-4 pr-12">
                   <div className="p-3 sm:p-4 rounded-xl bg-white/20">
                     <selectedCert.icon size={28} className="sm:w-8 sm:h-8" />
@@ -249,7 +249,7 @@ export default function Work() {
                       {/* Watermark overlay */}
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="text-brand-600/10 font-poppins font-bold text-4xl sm:text-6xl rotate-[-45deg]">
-                          AVIGHNA TREXIM
+                          AVIGHNAA TREXIM
                         </div>
                       </div>
                     </div>
