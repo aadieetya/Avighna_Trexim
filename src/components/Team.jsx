@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Package, 
-  FileText, 
-  Globe, 
-  Linkedin, 
-  Mail, 
+import {
+  Package,
+  FileText,
+  Globe,
+  Linkedin,
+  Mail,
   Phone,
   Award,
   TrendingUp,
   Shield
 } from "lucide-react";
-import member1 from "../assets/member1.png"; 
-import member2 from "../assets/member2.png";
-import member3 from "../assets/member3.png";
+import member1 from "../assets/member1.jpg";
+import member2 from "../assets/member2.jpg";
+import member3 from "../assets/member3.jpg";
 
 const team = [
-  { 
-    name: "Aaditya Jadhav", 
-    role: "Co-Founder", 
+  {
+    name: "Aaditya Jadhav",
+    role: "Co-Founder",
     title: "Director, Supply Chain Excellence",
     img: member3,
     icon: Globe,
@@ -27,9 +27,9 @@ const team = [
     linkedin: "#",
     email: "aaditya@avighnatrexim.com"
   },
-  { 
-    name: "Nikhil Kadam", 
-    role: "Co-Founder", 
+  {
+    name: "Nikhil Kadam",
+    role: "Co-Founder",
     title: "Director, Procurement Operations",
     img: member1,
     icon: Package,
@@ -38,9 +38,9 @@ const team = [
     linkedin: "#",
     email: "nikhil@avighnatrexim.com"
   },
-  { 
-    name: "Yash Choudhari", 
-    role: "Co-Founder", 
+  {
+    name: "Yash Choudhari",
+    role: "Co-Founder",
     title: "Director, Export Compliance",
     img: member2,
     icon: FileText,

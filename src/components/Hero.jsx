@@ -21,22 +21,21 @@ export default function Hero() {
       className="relative h-screen w-full overflow-hidden"
     >
       {/* Fallback Background Image */}
-      <div 
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-          videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'
-        }`}
+      <div
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'
+          }`}
         style={{
           backgroundImage: `url(${fallbackBg})`
         }}
       />
-      
+
       {/* Background Video */}
       {!videoError && (
-        <video 
+        <video
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
-          autoPlay 
-          loop 
-          muted 
+          autoPlay
+          loop
+          muted
           playsInline
           onLoadedData={() => setVideoLoaded(true)}
           onError={() => setVideoError(true)}
@@ -44,17 +43,17 @@ export default function Hero() {
           <source src="/backdrop-video.mp4" type="video/mp4" />
         </video>
       )}
-      
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />
-      
+
       {/* Loading Spinner */}
       {!videoLoaded && !videoError && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin" />
         </div>
       )}
-      
+
       {/* Centered Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
         <motion.div
@@ -66,15 +65,15 @@ export default function Hero() {
           {/* Logo */}
           <motion.img
             src={logo}
-            alt="Avighna Trexim Logo"
+            alt="Avighnaa Trexim Logo"
             className="mx-auto mb-6 h-20 w-auto sm:h-24 md:h-28 lg:h-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           />
-          
+
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-poppins font-black text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Avighna Trexim
+            Avighnaa Trexim
           </h1>
           <p className="mt-6 text-xl sm:text-2xl md:text-3xl font-poppins font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
             Delivering Trust Across Oceans!!

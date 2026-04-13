@@ -32,12 +32,12 @@ export default function Navbar() {
             <div className="grid h-8 w-8 sm:h-10 sm:w-10 place-items-center rounded-full p-1 transition-transform group-hover:scale-110">
               <img
                 src={avighnaLogo}
-                alt="Avighna Trexim Logo"
+                alt="Avighnaa Trexim Logo"
                 className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
               />
             </div>
             <h4 className="hidden sm:block text-base sm:text-lg font-poppins font-semibold text-brand-600 group-hover:text-brand-700 transition-colors">
-              Avighna Trexim
+              Avighnaa Trexim
             </h4>
           </button>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
             onClick={() => setOpen(false)}
           />
-          
+
           {/* Menu Panel */}
           <div
             id="mobile-menu"
@@ -95,7 +95,7 @@ export default function Navbar() {
               <div className="p-3">
                 <ul className="space-y-1">
                   {nav.map((item, index) => (
-                    <li 
+                    <li
                       key={item.label}
                       style={{ animationDelay: `${index * 50}ms` }}
                       className="animate-fadeIn"
